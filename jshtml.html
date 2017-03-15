@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+	<title data-ng-bind="title">客户端测试</title>
+</head>
+<body>
+	<div>
+		<button id="showMenu">显示或隐藏分享菜单</button>
+		<button id="startPage">启动客户端页面</button>
+		<button id="showActionBar">显示或隐藏导航栏</button>
+		<button id="closePage">关闭当前页面</button>
+		<div id="message"></div>
+	</div>
+	<script type="text/javascript" src="http://static.aidaijia.com/libs/??basejs/jquery-1.10.2.min.js,basejs/jquery-migrate-1.2.1.min.js,basejs/base64.js" id="seajsnode"></script>
+	<script type="text/javascript" src="aidaijia_hgj.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			var msg = $("#message");
+			var adj = window.aidaijia;
+	
+			var _showMenu = false;
+			$("#showMenu").click(function () {
+				msg.html("正在调用：显示或隐藏分享菜单");
+				adj.clientHost.showMenu(_showMenu, function () {
+					_showMenu = !_showMenu;
+					msg.html("调用成功 显示或隐藏分享菜单");
+				});
+			});
+	
+			$("#startPage").click(function () {
+				msg.html("（暂未实现）正在调用：启动客户端页面");
+			});
+	
+			var _showBar = false;
+			$("#showActionBar").click(function () {
+				msg.html("正在调用：显示或隐藏导航栏");
+				adj.clientHost.showActionBar(_showBar, function () {
+					_showBar = !_showBar;
+					msg.html("调用成功 显示或隐藏导航栏");
+				});
+			});
+	
+			$("#closePage").click(function () {
+				msg.html("正在调用：关闭当前页面");
+				adj.clientHost.closePage(function () {
+					msg.html("调用成功 关闭当前页面");
+				});
+			});
+		});
+	</script>
+</body>
+</html>
