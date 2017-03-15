@@ -96,7 +96,7 @@
 						return;
 					}
 				}
-				alert("result1="+result);
+				alert("result2="+result);
 				aidaijia.callbacks[fk] = null;
 				cx(result);
 			},
