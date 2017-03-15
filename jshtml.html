@@ -27,6 +27,7 @@
 				msg.html("正在调用：显示或隐藏分享菜单");
 				adj.clientHost.showMenu(_showMenu, function () {
 					_showMenu = !_showMenu;
+					alert("_showMenu");
 					msg.html("调用成功 显示或隐藏分享菜单");
 				});
 			});

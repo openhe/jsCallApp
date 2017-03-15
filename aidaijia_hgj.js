@@ -81,6 +81,7 @@
 			},
 			callbacks: {},
 			_callback: function (fk, result) {
+				alert("result1="+result);
 				if (!fk) {
 					return;
 				}
@@ -95,7 +96,7 @@
 						return;
 					}
 				}
-				alert("result="+result);
+				alert("result1="+result);
 				aidaijia.callbacks[fk] = null;
 				cx(result);
 			},
